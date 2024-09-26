@@ -137,6 +137,10 @@ function clean {
       -exec rm {} +
 }
 
+function run {
+    uvicorn files_api.main:APP --reload
+}
+
 # export the contents of .env as environment variables
 function try-load-dotenv {
     if [ ! -f "$THIS_DIR/.env" ]; then
